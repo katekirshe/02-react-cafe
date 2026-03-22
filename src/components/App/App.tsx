@@ -9,7 +9,7 @@ import Notification from '../Notification/Notification'
 function App() {
   const [votes, onChangeState] = useState<Votes>({ good: 0, neutral: 0, bad: 0 })
 function handleVote(type: VoteType) {
-  const newState: Votes = { ...votes }
+  const newState: Votes = { good: votes.good, bad: votes.bad, neutral: votes.neutral }
 
   if (type === 'good') {
     newState.good = votes.good + 1
